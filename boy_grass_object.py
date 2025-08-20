@@ -27,7 +27,7 @@ class Boy:
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
 
 
-class SmallBall: # 90 + 21 
+class SmallBall: # 90 + 21
     def __init__(self):
         self.x, self.y = random.randint(0, 700), 599
         self.image = load_image('ball21x21.png')
@@ -41,7 +41,7 @@ class SmallBall: # 90 + 21
     def draw(self):
         self.image.draw(self.x, self.y)
 
-class BigBall: # 90 + 41 
+class BigBall: # 90 + 41
     def __init__(self):
         self.x, self.y = random.randint(0, 700), 599
         self.image = load_image('ball41x41.png')
@@ -54,7 +54,7 @@ class BigBall: # 90 + 41
 
     def draw(self):
         self.image.draw(self.x, self.y)
-         
+
 
 def handle_events():
     global running
@@ -82,8 +82,12 @@ def reset_world(): # 맨 처음 초기화 할 때 '잔디 객체 생성'
     team = [Boy() for i in range(10)]
     world += team # 리스트 합치기
 
-    # small_ball = [ SmallBall() for i in range(10)] 
-    # world += small_ball
+
+# for i in range(10) 루프는 0부터 9까지의 값을 차례로 변수 i에 할당하며 반복합니다.
+# 따라서 10은 포함되지 않습니다.
+
+    small_ball = [ SmallBall() for i in range(10)]
+    world += small_ball
 
     big_ball = [ BigBall() for i in range(10)]
     world += big_ball
